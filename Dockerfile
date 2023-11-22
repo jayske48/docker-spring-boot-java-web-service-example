@@ -27,5 +27,4 @@ COPY int.env ./
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
-# Run jar file when the container launches
-CMD ["java", "-jar", "docker-java-app-example.jar"]
+RUN /bin/bash -c "source /app/int.env && echo \$AWS_PROFILE && echo \$AWS_REGION"
